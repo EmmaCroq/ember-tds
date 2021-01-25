@@ -1,8 +1,19 @@
 {{page-title "Ex1"}}
-<div class="card">
+<div class="card border border-primary">
   <div class="card-header bg-primary text-light">Ex1 : Note application</div>
   <div class="card-body">
-    <Textarea class="form-control" @value="{{this.content}}"/>
+    <h5 class="font-weight-bold">Note :</h5> <!--label ne marche pas avec bold -->
+    <Textarea class="form-control " rows="4" @value="{{this.content}}"/>
+    <div class="py-3">
+      <button type="button" class="btn btn-primary text-light">Enregistrer</button>
+      <button type="button" class="btn btn-primary text-light">Effacer</button>
+    </div>
+    <div class="alert alert-info" role="alert">
+      Nombre de caractères restant : {{MAX}}
+    </div>
+    <div class="alert alert-info" role="alert">
+      Note modifié
+    </div>
   </div>
 </div>
 {{outlet}}
