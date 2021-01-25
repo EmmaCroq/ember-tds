@@ -19,4 +19,11 @@ export default class Ex1Controller extends Controller {
   update() {
     this.update();
   }
+  getStyle() {
+    this.getElementById('container'), 'font-size';
+  }
+
+  getSize() {
+    this.querySelector('.selector');
+  }
 }
