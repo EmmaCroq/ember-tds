@@ -2,17 +2,17 @@
 <div class="card border border-primary">
   <div class="card-header bg-primary text-light">Ex1 : Note application</div>
   <div class="card-body">
-    <h5 class="font-weight-bold">Note :</h5> <!--label ne marche pas avec bold -->
-    <Textarea class="form-control " rows="4" @value="{{this.content}}"/>
+    <label class="font-weight-bold">Note :</label>
+    <Textarea class="form-control" name="message" id="message" rows="4" maxlength="100" @value="{{this.content}}" @input="{{this.update}}"/>
     <div class="py-3">
-      <button type="button" class="btn btn-primary text-light">Enregistrer</button>
-      <button type="button" class="btn btn-primary text-light">Effacer</button>
+      <button type="button" {{on "click" (action this.save)}} class="btn btn-primary text-light">Enregistrer</button>
+      <button type="button" {{on "click" (action this.clear)}} class="btn btn-primary text-light">Effacer</button>
     </div>
-    <div class="alert alert-info" role="alert">
-      Nombre de caractères restant : {{MAX}}
+    <div class="alert alert-info" data-ng-bind="count()" role="alert">
+      Nombre de caractères restant :
+      <span id="caracteres"{{on "click" this.count}}>100</span>
     </div>
-    <div class="alert alert-info" role="alert">
-      Note modifié
+    <div class="alert alert-info"  role="alert"> <!--data-ng-class="{'alert-warning': count()<50 && info!='Note sauvegardée','alert-danger':count()<20 && info!='Note sauvegardée','alert-success':info=='Note sauvegardée'}" -->
     </div>
   </div>
 </div>

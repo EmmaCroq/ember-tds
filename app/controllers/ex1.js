@@ -13,17 +13,23 @@ export default class Ex1Controller extends Controller {
   }
   @action
   save() {
-    this.save();
+    this.args.model.save();
   }
   @action
   update() {
     this.update();
   }
   getStyle() {
-    this.getElementById('container'), 'font-size';
+    if (this.toggle() < 20) return 'warning';
+    if (this.toggle() < 10) return 'danger';
+    else return 'info';
   }
 
   getSize() {
-    this.querySelector('.selector');
+    return this.MAX - this.content.length;
+  }
+
+  count() {
+    return this.getSize();
   }
 }
