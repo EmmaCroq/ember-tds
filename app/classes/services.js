@@ -9,16 +9,7 @@ export default class Services {
     // Programmation fonctionnelle
     return this.services.filterBy('active', true).length;
 
-    // Porgrammation classique
-    /*
-    let r=0;
-    this.services.forEach(s=>{
-      if(s.active){
-        r++;
-      }
-    });
-    return r;
-     */
+    // Programmation classique
   }
 
   get sumActive() {

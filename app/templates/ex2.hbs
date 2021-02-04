@@ -1,7 +1,7 @@
 {{page-title "Ex2"}}
-<div class='container'>
+<div class="container">
 
-  <form id='services'>
+  <form id='services' class="ng-pristine ng-valid ng-scope">
     <h1>Services</h1>
     <div class='alert alert-info'>
       <span>Choisissez les éléments à inclure</span><br>
@@ -10,22 +10,29 @@
                   'service sélectionné'
                   'services sélectionnés'}}</b>
     </div>
-  </form>
 
   <ul class="list-group">
     {{#each @model.services as |service|}}
       <li class="list-group-item {{if service.active 'active' ''}}"
-        {{action "toggleActive" service}}>{{service.name}} {{service.price}}</li>
+        {{action "toggleActive" service}}>
+        <div class="row justify-content-between"><div class="col-lg-9">{{service.name}}</div> <div class="col-lg-3 text-right">{{service.price}}</div></div>
+      </li>
 
     {{/each}}
   </ul>
 
   <div id='total'>
-    <hr><h3>Total : {{format-currency @model.sumActive '€'}}</h3>
+    <h3 class="row justify-content-between">
+      <div class="col-lg-9">Total : </div><div class="col-lg-3 text-right">{{format-currency @model.sumActive '€'}}</div>
+    </h3>
   </div>
 
-  <button type="button" class="btn btn-primary" {{action "toggleVisible" }} >Valider</button>
+  <div class="input-group">
+    <span class="input-group-addon"><input type="checkbox"></span>
+    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" placeholder="Code promo...">
+  </div>
 
+  </form>
 </div>
 
 {{outlet}}
