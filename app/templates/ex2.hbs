@@ -1,2 +1,29 @@
 {{page-title "Ex2"}}
+<div class='container'>
+
+  <form id='services'>
+    <h1>Services</h1>
+    <div class='alert alert-info'>
+      <span>Choisissez les élément à inclure</span><br>
+        <!-- plural -->
+    </div>
+  </form>
+
+  <ul class="list-group">
+    {{#each @model.services as |service|}}
+      <li class="list-group-item {{if service.active 'active' ''}}"
+        {{action "toggleActive" service}}>{{service.name}} {{service.price}}</li>
+
+    {{/each}}
+  </ul>
+
+  <div id='total'>
+    <hr><h3>Total : </h3>
+    <!-- format-currency -->
+  </div>
+
+  <button type="button" class="btn btn-primary" {{action "toggleVisible" }} >Valider</button>
+
+</div>
+
 {{outlet}}
