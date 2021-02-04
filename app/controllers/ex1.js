@@ -4,23 +4,21 @@ import { tracked } from '@glimmer/tracking';
 
 export default class Ex1Controller extends Controller {
   MAX = 100;
-  @tracked content = "Default";
-  @tracked info = "";
+  @tracked content = 'Default';
+  @tracked info = '';
 
   @action
   clear() {
-    this.content = "";
+    this.content = '';
   }
   @action
   save() {
     console.log(this.content);
   }
   @action
-  update() {
-
-  }
+  update() {}
   get style() {
-    if(this.size < 50 && this.size > 20 ){
+    if (this.size < 50 && this.size > 20) {
       return 'alert-warning';
     } else if (this.size < 20) {
       return 'alert-danger';

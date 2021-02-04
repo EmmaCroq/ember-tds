@@ -1,0 +1,8 @@
+{{page-title "Ex1b"}}
+<ul>
+  {{#each @model as |elm|}}
+    <li class="list-group-item">{{elm}}</li>
+  {{/each}}
+</ul>
+<LinkTo @route='ex1'>Retour</LinkTo>
+{{outlet}}

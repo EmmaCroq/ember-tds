@@ -3,11 +3,10 @@
   <div class="card-header bg-primary text-light">Exo 1</div>
   <div class="card-body">
     <Textarea class="form-control" @value={{this.content}}/>
-    <div class="alert alert-info">{{this.size}}</div>
+    <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div>
     <div class="alert {{this.style}}" role="alert">Info {{this.style}}</div>
     <button type="button" class="btn btn-primary" {{on "click" this.clear}}>Effacer</button>
     <button type="button" class="btn btn-secondary" {{on "click" this.save}}>Sauver</button>
   </div>
 </div>
-
 {{outlet}}
