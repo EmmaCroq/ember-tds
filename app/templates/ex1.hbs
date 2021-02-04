@@ -1,19 +1,13 @@
 {{page-title "Ex1"}}
-<div class="card border border-primary">
-  <div class="card-header bg-primary text-light">Ex1 : Note application</div>
+<div class="card">
+  <div class="card-header bg-primary text-light">Exo 1</div>
   <div class="card-body">
-    <label class="font-weight-bold">Note :</label>
-    <Textarea class="form-control" name="message" id="message" rows="4" maxlength="100" @value="{{this.content}}" @input="{{this.update}}"/>
-    <div class="py-3">
-      <button type="button" {{on "click" (action this.save)}} class="btn btn-primary text-light">Enregistrer</button>
-      <button type="button" {{on "click" (action this.clear)}} class="btn btn-primary text-light">Effacer</button>
-    </div>
-    <div class="alert alert-info" data-ng-bind="count()" role="alert">
-      Nombre de caractères restant :
-      <span id="caracteres"{{on "click" this.count}}>100</span>
-    </div>
-    <div class="alert alert-info"  role="alert"> <!--data-ng-class="{'alert-warning': count()<50 && info!='Note sauvegardée','alert-danger':count()<20 && info!='Note sauvegardée','alert-success':info=='Note sauvegardée'}" -->
-    </div>
+    <Textarea class="form-control" @value={{this.content}}/>
+    <div class="alert alert-info">{{this.size}}</div>
+    <div class="alert {{this.style}}" role="alert">Info {{this.style}}</div>
+    <button type="button" class="btn btn-primary" {{on "click" this.clear}}>Effacer</button>
+    <button type="button" class="btn btn-secondary" {{on "click" this.save}}>Sauver</button>
   </div>
 </div>
+
 {{outlet}}
