@@ -4,8 +4,11 @@
   <form id='services'>
     <h1>Services</h1>
     <div class='alert alert-info'>
-      <span>Choisissez les élément à inclure</span><br>
-        <!-- plural -->
+      <span>Choisissez les éléments à inclure</span><br>
+      <b>{{plural @model.countActive
+                  'Aucun service sélectionné'
+                  'service sélectionné'
+                  'services sélectionnés'}}</b>
     </div>
   </form>
 
@@ -18,8 +21,7 @@
   </ul>
 
   <div id='total'>
-    <hr><h3>Total : </h3>
-    <!-- format-currency -->
+    <hr><h3>Total : {{format-currency @model.sumActive '€'}}</h3>
   </div>
 
   <button type="button" class="btn btn-primary" {{action "toggleVisible" }} >Valider</button>
