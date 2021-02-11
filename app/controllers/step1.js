@@ -7,10 +7,17 @@ export default class Step1Controller extends Controller {
   includeItems = [];
   @tracked dispoItems_ = [];
   @tracked includeItems_ = [];
+
   @action changeDispo(elements) {
     this.dispoItems_ = elements;
   }
-  @action changeInclude(elements) {
+
+  @action changeIncluded(elements) {
     this.includeItems_ = elements;
+  }
+
+  @action add(source, dest, what) {
+    dest.pushObjects(what);
+    source.removeObjects(what);
   }
 }
