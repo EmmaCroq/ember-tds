@@ -1,6 +1,7 @@
 import { helper } from '@ember/component/helper';
 
-export default helper(function formatCurrency(params/*, hash*/) {
+export default helper(function formatCurrency(params /*, hash*/) {
   let [value, symbol] = params;
-  value + ',00 ' + symbol;
+  symbol = symbol || '€';
+  return value + ',00' + symbol;
 });

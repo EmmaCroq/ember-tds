@@ -15,7 +15,7 @@
     {{#each @model.services as |service|}}
       <li class="list-group-item {{if service.active 'active' ''}}"
         {{action "toggleActive" service}}>
-        <div class="row justify-content-between"><div class="col-lg-9">{{service.name}}</div> <div class="col-lg-3 text-right">{{service.price}}</div></div>
+        <div class="row justify-content-between"><div class="col-lg-9">{{service.name}}</div> <div class="col-lg-3 text-right">{{format-currency service.price}}</div></div>
       </li>
 
     {{/each}}
@@ -23,12 +23,12 @@
 
   <div id='total'>
     <h3 class="row justify-content-between">
-      <div class="col-lg-9">Total : </div><div class="col-lg-3 text-right">{{format-currency @model.sumActive '€'}}</div>
+      <div class="col-lg-9">Total : </div><div class="col-lg-3 text-right">{{format-currency @model.sumActive}}</div>
     </h3>
   </div>
 
   <div class="input-group">
-    <span class="input-group-addon"><input type="checkbox"></span>
+    <span class="input-group-addon"><input type="checkbox" {{ action "toggleTotalVisible" this on="change"}}></span>
     <input class="form-control ng-pristine ng-untouched ng-valid" type="text" placeholder="Code promo...">
   </div>
 
