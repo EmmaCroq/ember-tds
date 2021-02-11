@@ -4,16 +4,16 @@ import { action } from '@ember/object';
 
 export default class Step1Controller extends Controller {
   dispoItems = [];
-  includeItems = [];
+  includedItems = [];
   @tracked dispoItems_ = [];
-  @tracked includeItems_ = [];
+  @tracked includedItems_ = [];
 
   @action changeDispo(elements) {
     this.dispoItems_ = elements;
   }
 
   @action changeIncluded(elements) {
-    this.includeItems_ = elements;
+    this.includedItems_ = elements;
   }
 
   @action add(source, dest, what) {
