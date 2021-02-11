@@ -3,11 +3,12 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class MultiSelectComponent extends Component {
-  @tracked elements = []; // on spécifie la valeur elements qui doit être suivient
+  @tracked elements = []; // on spécifie la valeur elements qui doit être suivient (déclanche le recalcul automatique à tous les endroits qui l'appele)
   selected = []; // on crée un tableau selected et elements
   id = 'id';
 
-  constructor() { // on crée un constructeur qui sera utile pour toutes les instances de cette classe
+  constructor() {
+    // on crée un constructeur qui sera utile pour toutes les instances de cette classe
     super(...arguments);
     this.elements = this.args.elements;
     this.selected = this.args.selected;

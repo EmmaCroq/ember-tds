@@ -1,0 +1,11 @@
+{{page-title "Step1"}}
+<MultiSelect @elements={{this.dispoItems}}
+             @selected={{this.dispoItems_}}
+             @onChange={{this.changeDispo}}
+/>
+
+<MultiSelect @elements={{this.includeItems}}
+             @selected={{this.includeItems_}}
+             @onChange={{this.changeInclude}}
+/>
+{{outlet}}
