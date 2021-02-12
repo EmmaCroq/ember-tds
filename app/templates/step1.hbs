@@ -1,15 +1,20 @@
 {{page-title "Step1"}}
+<!-- 1ere liste -->
 <MultiSelect @elements={{this.dispoItems}}
              @selected={{this.dispoItems_}}
              @onChange={{this.changeDispo}}
 />
+
 <button {{action "add" this.dispoItems this.includedItems this.dispoItems_}}>Ajouter selection</button>
 <button {{action "add" this.includedItems this.dispoItems this.includedItems_}}>Retirer selection</button>
+
+<!-- 2eme liste -->
 <MultiSelect @elements={{this.includedItems}}
              @selected={{this.includedItems_}}
              @onChange={{this.changeIncluded}}
 />
 
+<!-- texte optionel descriptif des elm seleted -->
 <ul>
   {{#each this.dispoItems_ as |item|}}
     <li>{{item.title}}</li>

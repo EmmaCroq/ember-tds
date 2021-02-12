@@ -1,5 +1,6 @@
 <select size="10" ...attributes multiple="multiple" {{on "change" this.change}}>
   {{#each @elements as |elm|}}
+    <!-- grace au helper array-contains, on va pouvoir selectionner les elm selected de la liste et autant de fois que l'on veut (multiple) -->
     <option value={{elm.id}} selected={{array-contains @selected elm this.id}}>{{elm.title}}</option>
   {{/each}}
 </select>
