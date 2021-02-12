@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
+import { action } from '@ember/object';
 
 export default class Step1Route extends Route {
-
   //modele hook
   model() {
     return [
@@ -52,5 +52,9 @@ export default class Step1Route extends Route {
 
   setupController(controller, model) {
     controller.dispoItems = model;
+  }
+
+  @action toggleEtapeSuivante() {
+    this.transitionTo('step2');
   }
 }

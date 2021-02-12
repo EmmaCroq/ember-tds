@@ -16,6 +16,10 @@ export default class Step1Controller extends Controller {
     this.includedItems_ = elements; // on ajoute l'elm à la liste n°2 selected
   }
 
+  /*
+   * add et remove
+   */
+  // pourquoi faire une méthode remove ? si ce n'est pour mieux comprendre le code avec le changement de nom
   @action add(source, dest, what) {
     dest.pushObjects(what); // on transfère les elm selected à la destination
     source.removeObjects(what); // et on les retire de la source

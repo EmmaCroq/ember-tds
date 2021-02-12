@@ -1,0 +1,8 @@
+{{page-title "Step2"}}
+<ul>
+  {{#each @model.includedItems as |item|}}
+    <li>{{item.title}}</li>
+  {{/each}}
+</ul>
+<button {{ action "toggleEtapePrecedente"}}>Etape precedente</button>
+{{outlet}}
