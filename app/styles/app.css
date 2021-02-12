@@ -5,7 +5,7 @@
   padding: 10px 10px 15px 30px;
   margin: 50px auto;
   box-sizing: border-box;
-  width: 95%;
+  width: 93%;
 }
 
 .choixMultiples h1 {
@@ -33,7 +33,8 @@
 
 .list-btn {
   display: block !important;
-  margin: 12px 6px;
+  margin: 12px 20px;
+  width: 80px;
 }
 
 #envoie, #retour {

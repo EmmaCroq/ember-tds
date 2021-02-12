@@ -15,16 +15,18 @@
         </div>
       </label>
       <!-- texte optionel descriptif des elm seleted -->
-      <ul>
+      <!-- <ul>
         {{#each this.dispoItems_ as |item|}}
           <li>{{item.title}}</li>
         {{/each}}
-      </ul>
+      </ul> -->
     </div>
 
     <div class='inline-block'>
-      <button class='btn btn-primary list-btn' {{action "add" this.dispoItems this.includedItems this.dispoItems_}}>Ajouter selection</button>
-      <button class='btn btn-primary list-btn' {{action "add" this.includedItems this.dispoItems this.includedItems_}}>Retirer selection</button>
+      <button class='btn btn-primary list-btn' {{action "add" this.dispoItems this.includedItems this.dispoItems_}}><div class='glyphicon glyphicon-step-forward'></div></button>
+      <button class='btn btn-primary list-btn' {{action "add" this.dispoItems this.includedItems this.dispoItems}}><div class='glyphicon glyphicon-fast-forward'></div></button>
+      <button class='btn btn-primary list-btn' {{action "add" this.includedItems this.dispoItems this.includedItems_}}><div class='glyphicon glyphicon-step-backward'></div></button>
+      <button class='btn btn-primary list-btn' {{action "add" this.includedItems this.dispoItems this.includedItems}}><div class='glyphicon glyphicon-fast-backward'></div></button>
     </div>
 
     <div class='inline-block'>
