@@ -1,25 +1,47 @@
 {{page-title "Step1"}}
-<!-- 1ere liste -->
-<MultiSelect @elements={{this.dispoItems}}
-             @selected={{this.dispoItems_}}
-             @onChange={{this.changeDispo}}
-/>
 
-<button {{action "add" this.dispoItems this.includedItems this.dispoItems_}}>Ajouter selection</button>
-<button {{action "add" this.includedItems this.dispoItems this.includedItems_}}>Retirer selection</button>
+<form class='choixMultiples'>
+  <h1>Sélectionnez vos produits</h1>
+  <div class='form-group'>
+    <div class='inline-block'>
+      <!-- 1ere liste -->
+      <label>
+      Produits disponibles :
+        <div>
+      <MultiSelect @elements={{this.dispoItems}}
+                   @selected={{this.dispoItems_}}
+                   @onChange={{this.changeDispo}}
+      />
+        </div>
+      </label>
+      <!-- texte optionel descriptif des elm seleted -->
+      <ul>
+        {{#each this.dispoItems_ as |item|}}
+          <li>{{item.title}}</li>
+        {{/each}}
+      </ul>
+    </div>
 
-<!-- 2eme liste -->
-<MultiSelect @elements={{this.includedItems}}
-             @selected={{this.includedItems_}}
-             @onChange={{this.changeIncluded}}
-/>
+    <div class='inline-block'>
+      <button class='btn btn-primary list-btn' {{action "add" this.dispoItems this.includedItems this.dispoItems_}}>Ajouter selection</button>
+      <button class='btn btn-primary list-btn' {{action "add" this.includedItems this.dispoItems this.includedItems_}}>Retirer selection</button>
+    </div>
 
-<!-- texte optionel descriptif des elm seleted -->
-<ul>
-  {{#each this.dispoItems_ as |item|}}
-    <li>{{item.title}}</li>
-  {{/each}}
-</ul>
+    <div class='inline-block'>
+      <!-- 2eme liste -->
+      <label>
+      Produits à inclure :
+        <div>
+      <MultiSelect @elements={{this.includedItems}}
+                   @selected={{this.includedItems_}}
+                   @onChange={{this.changeIncluded}}
+      />
+        </div>
+      </label>
+    </div>
+  </div>
 
-<button {{ action "toggleEtapeSuivante"}}>Etape suivante</button>
+
+  <button class='btn btn-primary' id='envoie' {{ action "toggleEtapeSuivante"}}>Etape suivante <div class='glyphicon glyphicon-circle-arrow-right'></div></button>
+</form>
 {{outlet}}

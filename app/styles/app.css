@@ -1,0 +1,42 @@
+.choixMultiples {
+  background-color: #61a1bc;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px #ccc;
+  padding: 10px 10px 15px 30px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  width: 95%;
+}
+
+.choixMultiples h1 {
+  color: #fff;
+  font-size: 30px;
+  font-family: 'Century gothic', cursive;
+  font-weight: normal;
+  line-height: 1;
+  text-shadow: 0 3px 0 rgb(0 0 0 / 10%);
+}
+
+.choixMultiples select {
+  min-width: 500px;
+  padding: 10px;
+}
+
+.choixMultiples option {
+  margin: 3px;
+}
+
+.choixMultiples div.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.list-btn {
+  display: block !important;
+  margin: 12px 6px;
+}
+
+#envoie, #retour {
+  width: 98%;
+  text-align: right;
+}
