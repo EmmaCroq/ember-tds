@@ -1,5 +1,4 @@
 {{page-title "Step2"}}
-<form class='choixMultiples'>
   <h1>Votre choix</h1>
   <ul>
     {{#each @model.includedItems as |item|}}
@@ -7,5 +6,4 @@
     {{/each}}
   </ul>
   <button class='btn btn-primary' id='retour' {{ action "toggleEtapePrecedente"}}><div class='glyphicon glyphicon-circle-arrow-left'></div> Etape precedente</button>
-</form>
 {{outlet}}
