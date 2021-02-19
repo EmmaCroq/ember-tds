@@ -1,13 +1,13 @@
 {{page-title "Add"}}
 <div class="row">
   <div class="col">
-    <Input @value={{ @model.nom }} placeholder="Entrez votre nom" class="form-control"/>
+    <Input @value={{ @model.nom }} placeholder="Entrez votre nom" class="form-control" required/>
   </div>
   <div class="col">
-    <Input @value={{ @model.prenom }} placeholder="Entrez votre prenom" class="form-control"/>
+    <Input @value={{ @model.prenom }} placeholder="Entrez votre prenom" class="form-control" required/>
   </div>
   <div class="col">
-    <Input @value={{ @model.email }} placeholder="Entrez votre email" type="email" class="form-control"/>
+    <Input @value={{ @model.email }} placeholder="Entrez votre email" type="email" class="form-control" required/>
   </div>
   <div class="col">
     <button {{ action "save" @model }} class="btn btn-primary">Enregistrer</button>

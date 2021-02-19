@@ -16,6 +16,7 @@ export default class ContactsRoute extends Route {
   }
 
   @action saveDeletion(contacts) {
-    contacts.save();
+    contacts.forEach((c) => c.save());
   }
+
 }
