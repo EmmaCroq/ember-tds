@@ -6,8 +6,8 @@ export default class Ex1Route extends Route {
   model() {
     return { items: [] };
   }
-  @action()
-  save(content) {
+  @action
+  saveAction(content) {
     let model = this.modelFor(this.routeName);
     model.items = content.split('\n');
     this.transitionTo('ex1b');

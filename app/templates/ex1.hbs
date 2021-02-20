@@ -1,12 +1,14 @@
 {{page-title "Ex1"}}
 <div class="card">
-  <div class="card-header bg-primary text-light">Exo 1</div>
+  <div class="card-header bg-primary text-light">Exo 1 - Application Note</div>
   <div class="card-body">
-    <Textarea class="form-control" @value={{this.content}}/>
+    <Textarea class="form-control" @maxlength=100 {{on "keydown" update}} @value={{this.content}}/>
     <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div>
-    <div class="alert {{this.style}}" role="alert">Info {{this.style}}</div>
-    <button type="button" class="btn btn-primary" {{on "click" this.clear}}>Effacer</button>
-    <button type="button" class="btn btn-secondary" {{on "click" this.save}}>Sauver</button>
+    {{#if this.hidden}}
+      <div class="alert {{this.style}}" role="alert">{{this.info}}</div>
+      <button type="button" class="btn btn-primary" {{ action "clear" }}>Effacer</button>
+      <button type="button" class="btn btn-secondary" {{action "saveAction" this.content }} {{ action "save" }}>Enregistrer</button>
+    {{/if}}
   </div>
 </div>
 {{outlet}}

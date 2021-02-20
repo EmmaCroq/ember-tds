@@ -1,8 +1,13 @@
 {{page-title "Ex1b"}}
-<ul>
-  {{#each @model as |elm|}}
-    <li class="list-group-item">{{elm}}</li>
-  {{/each}}
-</ul>
-<LinkTo @route='ex1'>Retour</LinkTo>
+<div class="card">
+  <div class="card-header bg-primary text-light">Compte-rendu des notes</div>
+  <div class="card-body">
+    <ul>
+      {{#each @model as |elm|}}
+        <li class="list-group-item">{{elm}}</li>
+      {{/each}}
+    </ul>
+    <LinkTo @route="ex1"><button class="btn btn-primary">Retour</button></LinkTo>
+  </div>
+</div>
 {{outlet}}
