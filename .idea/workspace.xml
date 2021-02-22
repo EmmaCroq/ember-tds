@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c9008cbf-2eb5-4c23-b02f-926de7093502" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/categories.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/categories.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

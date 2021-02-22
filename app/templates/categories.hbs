@@ -1,2 +1,18 @@
 {{page-title "Categories"}}
+
+<div>
+  <BsNav @type="tabs" as |category|>
+    <category.item>
+      <category.link-to @route="categories">{{category.nom}}</category.link-to>
+    </category.item>
+  </BsNav>
+  {{outlet}}
+</div>
+
+<ul>
+  {{#each @model as |category|}}
+    <li>{{category.nom}}: contact1 </li>
+  {{/each}}
+</ul>
+<LinkTo @route="categories.add" class="btn btn-primary">Ajouter</LinkTo>
 {{outlet}}
