@@ -13,13 +13,12 @@ export default class Services {
   //@computed('services.@each.active')
   get countActive() {
     // combien de services actifs
-    return this.services.filterBy('active', true).length;
+    return this.services.filter((s)=>s.active).length;
   }
 
   get sumActive() {
     // somme total des services actifs
-    // Programmation fonctionnelle
-    let services = this.services.filterBy('active', true);
+    let services = this.services.filter((s)=>s.active);
     let result = 0;
     services.forEach((s) => {
       result += s.price;

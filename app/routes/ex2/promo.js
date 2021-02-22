@@ -6,7 +6,7 @@ export default class Ex2PromoRoute extends Route {
     return this.modelFor('ex2');
   }
 
-  aftermodel(model) {
+  afterModel(model) {
     model.promos = promos;
   }
 }

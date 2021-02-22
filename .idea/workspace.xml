@@ -4,11 +4,11 @@
     <list default="true" id="c9008cbf-2eb5-4c23-b02f-926de7093502" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/format-currency.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/format-currency.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/ex2.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/ex2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/ex2/promo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/ex2/promo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/application.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/ex2.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ex2.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/ex2/promo.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ex2/promo.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
