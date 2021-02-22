@@ -13,4 +13,13 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path:'update/:contact_id'});
   });
+
+  this.route('categories', function() {
+    this.route('add');
+    this.route('update', { path:'/:category_id'});
+    this.route('contacts', { path:'/:category_id'}, function() {
+      this.route('add');
+      this.route('update', { path:'/:category_id'});
+    });
+  });
 });
