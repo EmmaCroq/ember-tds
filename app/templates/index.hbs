@@ -14,7 +14,7 @@
         <label for="password">Mot de passe</label>
         <Input @value={{ @model.password }} type="password" class="form-control" id="password" placeholder="Mot de passe"/>
       </div>
-      <button {{ action "login" @model.name }} type="submit" id="envoie" class="btn btn-primary">Se connecter <div class='glyphicon glyphicon-circle-arrow-right'></div></button>
+      <button {{ action "login" @model }} type="submit" id="envoie" class="btn btn-primary">Se connecter <div class='glyphicon glyphicon-circle-arrow-right'></div></button>
     </fieldset>
     <br>
   </form>

@@ -1,6 +1,6 @@
 import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
 import { set } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class UserAuthService extends Service {
   @tracked user = null;
@@ -33,3 +33,4 @@ export default class UserAuthService extends Service {
     this.storage.user = JSON.stringify({ id: user.id, email: user.email });
   }
 }
+

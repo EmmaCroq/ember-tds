@@ -11,5 +11,5 @@ Router.map(function () {
   this.route('logout');
   this.route('sections');
   this.route('order', { path: 'order/:order_id' });
-  this.route('Abstractroute');
+  this.route('abstractroute');
 });
