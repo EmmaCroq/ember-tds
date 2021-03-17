@@ -3,9 +3,12 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class IndexRoute extends Route {
+  model() {
+    return {};
+  }
+
   @service userAuth;
   @action login(user) {
-    let self = this;
     this.store
       .query('employee', {
         filter: {
@@ -16,8 +19,8 @@ export default class IndexRoute extends Route {
         if (connected.length) {
           connected = connected.firstObject;
           if (connected.password && connected.password === user.password) {
-            self.userAuth.login(connected);
-            self.transitionTo('board');
+            this.userAuth.login(connected);
+            this.transitionTo('board');
           }
         }
       });
