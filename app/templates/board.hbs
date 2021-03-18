@@ -1,13 +1,22 @@
 {{page-title "Board"}}
 
-<p>
-  Nom de l'utilisateur : {{ @model.name }}
-</p>
-
-<button {{ action "logout" }} type="submit" class="btn btn-primary">Deconnecter</button>
-
-liste des orders
-order?include=employee
+<div class="ui green segment">
+  <span class="ui label">{{ @model.name }}</span>
+  <span class="ui label">{{ @model.employee.email }}</span>
+  <button class="ui black button" {{ action "logout" }}>
+    Deconnexion
+  </button>
+</div>
+<h2>Orders</h2>
+<ul>
+  {{#each @model.orders as |order|}}
+    <li>
+      <LinkTo @route="order" @model={{order.id}}>
+        {{order.dateCreation}} <span class="ui circular label">{{order.count}}</span>
+      </LinkTo>
+    </li>
+  {{/each}}
+</ul>
 
 
 {{outlet}}
