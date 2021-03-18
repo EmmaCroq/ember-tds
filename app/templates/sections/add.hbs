@@ -1,0 +1,7 @@
+{{page-title "Add"}}
+
+<Input type="text" @value={{@model.name}} placeholder="Nom de la section"/>
+<Input type="text" @value={{@model.description}} placeholder="Description de la section"/>
+<button {{ action 'addSection' @model }} type="submit">Ajouter la section</button>
+
+{{outlet}}

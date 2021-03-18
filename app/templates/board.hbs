@@ -1,11 +1,9 @@
 {{page-title "Board"}}
 
 <div class="ui green segment">
-  <span class="ui label">{{ @model.name }}</span>
   <span class="ui label">{{ @model.employee.email }}</span>
-  <button class="ui black button" {{ action "logout" }}>
-    Deconnexion
-  </button>
+  <button class="ui black button" {{ action "logout" }}>Deconnexion</button>
+  <button class="ui black button" {{ action "store" }}>Gérer le Store</button>
 </div>
 <h2>Orders</h2>
 <ul>

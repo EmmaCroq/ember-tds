@@ -1,2 +1,33 @@
-{{page-title "Sections"}}
-{{outlet}}
+{{page-title "Board"}}
+
+<div class="ui green segment">
+  <button class="ui black button" {{ action "logout" }}>Deconnexion</button>
+  <button class="ui black button" {{ action "board" }}>Tableau de bord</button>
+</div>
+<h2>Store</h2>
+<fieldset>
+  <legend>Gestion des sections</legend>
+  <button {{ action 'newSection' }} class="btn btn-primary">Nouvelle section</button>
+  <button class="btn btn-primary">Nouveau produit</button>
+
+  <div class="container">{{outlet}}</div>
+
+  <div class="ui segment">
+    <h4>Sections (nb de sections)</h4>
+    <input type="search" placeholder="Filter selection">
+  </div>
+
+  <h3>Liste des sections</h3>
+  <ul>
+    {{#each @model as |section|}}
+      <li>
+          {{section.name}}
+          {{section.description}}
+          <button>nb produit</button>
+          <button class="ui black button">Editer</button>
+        <button class="ui red button"><div class='glyphicon glyphicon-remove'></div></button>
+      </li>
+    {{/each}}
+  </ul>
+
+</fieldset>
