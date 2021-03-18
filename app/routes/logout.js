@@ -1,4 +1,9 @@
-import Route from '@ember/routing/route';
+import Abstractroute from './abstractroute';
+import { action } from '@ember/object';
 
-export default class LogoutRoute extends Route {
+export default class LogoutRoute extends Abstractroute {
+  @action toIndex() {
+    this.userAuth.logout();
+    this.transitionTo('index');
+  }
 }
