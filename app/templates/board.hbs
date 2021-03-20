@@ -1,9 +1,13 @@
 {{page-title "Board"}}
 
-<div class="ui green segment">
+<div class="ui blue segment">
   <span class="ui label">{{ @model.employee.email }}</span>
-  <button class="ui black button" {{ action "logout" }}>Deconnexion</button>
-  <button class="ui black button" {{ action "store" }}>Gérer le Store</button>
+  <LinkTo @route="logout" class="ui black button">
+    Deconnexion
+  </LinkTo>
+  <LinkTo @route="sections" class="ui black button">
+    Gérer le Store
+  </LinkTo>
 </div>
 <h2>Orders</h2>
 <ul>

@@ -1,33 +1,51 @@
 {{page-title "Board"}}
 
-<div class="ui green segment">
-  <button class="ui black button" {{ action "logout" }}>Deconnexion</button>
-  <button class="ui black button" {{ action "board" }}>Tableau de bord</button>
+<div class="ui blue segment">
+  <LinkTo @route="logout" class="ui black button">
+    Deconnexion
+  </LinkTo>
+  <LinkTo @route="board" class="ui black button">
+    Tableau de bord
+  </LinkTo>
 </div>
 <h2>Store</h2>
 <fieldset>
   <legend>Gestion des sections</legend>
-  <button {{ action 'newSection' }} class="btn btn-primary">Nouvelle section</button>
-  <button class="btn btn-primary">Nouveau produit</button>
+  <LinkTo @route="sections.add" class="ui blue button">
+    Nouvelle section
+  </LinkTo>
+  <button class="ui blue button">Nouveau produit</button>
 
-  <div class="container">{{outlet}}</div>
+  {{outlet}}
 
   <div class="ui segment">
-    <h4>Sections (nb de sections)</h4>
-    <input type="search" placeholder="Filter selection">
+    <h4>Sections ({{ @model.length }})</h4>
+    <div class="ui form"><input type="search" class="ui input" placeholder="Filter selection"></div>
   </div>
 
   <h3>Liste des sections</h3>
-  <ul>
+  <table class="ui striped table">
     {{#each @model as |section|}}
-      <li>
+      <tr>
+        <td>
           {{section.name}}
-          {{section.description}}
-          <button>nb produit</button>
+        </td>
+        <td>
+          ({{section.description}})
+        </td>
+        <td>
+          <button class="ui label">nb produit</button>
+        </td>
+        <td>
           <button class="ui black button">Editer</button>
-        <button class="ui red button"><div class='glyphicon glyphicon-remove'></div></button>
-      </li>
+        </td>
+        <td>
+          <LinkTo @route="sections.delete" @model={{ array @model section }} class="ui red button">
+            <div class='glyphicon glyphicon-remove'></div>
+          </LinkTo>
+        </td>
+      </tr>
     {{/each}}
-  </ul>
+  </table>
 
 </fieldset>
