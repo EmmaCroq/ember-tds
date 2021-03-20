@@ -34,10 +34,12 @@
           ({{section.description}})
         </td>
         <td>
-          <button class="ui label">nb produit</button>
+          <p class="ui label">nb produit</p>
         </td>
         <td>
-          <button class="ui black button">Editer</button>
+          <LinkTo @route="sections.edit" @model={{section.id}} class="ui black button">
+            Editer
+          </LinkTo>
         </td>
         <td>
           <LinkTo @route="sections.delete" @model={{section.id}} class="ui red button">
