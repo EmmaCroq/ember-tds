@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9008cbf-2eb5-4c23-b02f-926de7093502" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit/models/product-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/sections/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/sections/add-product.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections/add-product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/sections.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/sections/delete.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/delete.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/sections/add-product.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/add-product.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/sections/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/edit.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +72,7 @@
       <workItem from="1615553191491" duration="5504000" />
       <workItem from="1615990790733" duration="503000" />
       <workItem from="1615991297114" duration="36947000" />
-      <workItem from="1616190989818" duration="10439000" />
+      <workItem from="1616190989818" duration="15712000" />
     </task>
     <servers />
   </component>

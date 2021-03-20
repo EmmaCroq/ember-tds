@@ -16,6 +16,38 @@
       Annuler
     </LinkTo>
   </form>
+  <hr>
+  <LinkTo @route="sections.addProduct" class="ui blue button">
+    Nouveau produit
+  </LinkTo>
+
+  {{outlet}}
+
+  <div class="ui segment">
+    <h4>{{ @model.name }} ({{ @model.products.length }})</h4>
+    <div class="ui form">
+      <input type="search" class="ui input" placeholder="Filter selection">
+    </div>
+  </div>
+
+  <h4>Liste des produits de la section {{ @model.name }}</h4>
+  <table class="ui striped table">
+  {{#each @model.products as |product|}}
+    <tr>
+      <td>
+        {{ product.name }}
+      </td>
+      <td>
+        {{ product.price }} €
+      </td>
+      <td>
+        <button class="ui black button">Editer</button>
+      </td>
+      <td>
+        <button class="ui red button"><div class='glyphicon glyphicon-remove'></div></button>
+      </td>
+    </tr>
+  {{/each}}
+  </table>
 </div>
 
-{{outlet}}

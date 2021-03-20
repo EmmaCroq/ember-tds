@@ -16,11 +16,13 @@
   </LinkTo>
   <button class="ui blue button">Nouveau produit</button>
 
-  {{outlet}}
+  {{outlet}}<hr>
 
   <div class="ui segment">
     <h4>Sections ({{ @model.length }})</h4>
-    <div class="ui form"><input type="search" class="ui input" placeholder="Filter selection"></div>
+    <div class="ui form">
+      <input type="search" class="ui input" placeholder="Filter selection">
+    </div>
   </div>
 
   <h3>Liste des sections</h3>
@@ -34,7 +36,7 @@
           ({{section.description}})
         </td>
         <td>
-          <p class="ui label">nb produit</p>
+          <p class="ui label">{{ section.products.length }}</p>
         </td>
         <td>
           <LinkTo @route="sections.edit" @model={{section.id}} class="ui black button">
@@ -42,9 +44,9 @@
           </LinkTo>
         </td>
         <td>
-          <LinkTo @route="sections.delete" @model={{section.id}} class="ui red button">
-            <div class='glyphicon glyphicon-remove'></div>
-          </LinkTo>
+          <LinkTo {{ action 'delete' section}} @route="sections.delete" @model={{section.id}} class="ui red button">
+            <div class='glyphicon glyphicon-remove'></div> <!-- je n'arrives pas à réaliser une action sur un linkto -->
+          </LinkTo> <!-- c'est pourtant le seul moyen pour une route dynamique ??? -->
         </td>
       </tr>
     {{/each}}

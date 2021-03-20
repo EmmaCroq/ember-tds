@@ -1,2 +1,21 @@
 {{page-title "AddProduct"}}
+
+<div class="ui segment">
+  <form class="ui form">
+    <h4 class="ui dividing header">Ajouter un produit</h4>
+    <div class="field">
+      <label>Nom</label>
+      <Input type="text" @value={{@model.name}} placeholder="Nom du produit" required/>
+    </div>
+    <div class="field">
+      <label>Prix</label>
+      <Input type="number" @value={{@model.price}} placeholder="Prix du produit" required/>
+    </div>
+    <button {{ action 'addProduct' @model }} type="submit" class="ui button">Ajouter le produit</button>
+    <LinkTo @route="sections" class="ui button">
+      Annuler
+    </LinkTo>
+  </form>
+</div>
+
 {{outlet}}
