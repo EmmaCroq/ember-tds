@@ -14,9 +14,11 @@
   <LinkTo @route="sections.add" class="ui blue button">
     Nouvelle section
   </LinkTo>
-  <button class="ui blue button">Nouveau produit</button>
+  <LinkTo @route="sections.addProduct" class="ui blue button">
+    Nouveau produit
+  </LinkTo>
 
-  {{outlet}}<hr>
+  {{ outlet "newsect" }}<hr>
 
   <div class="ui segment">
     <h4>Sections ({{ @model.length }})</h4>
@@ -50,6 +52,9 @@
         </td>
       </tr>
     {{/each}}
+    <tr>
+      <td colspan="5">{{ outlet "newprod" }}</td>
+    </tr>
   </table>
 
 </fieldset>

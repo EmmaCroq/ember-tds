@@ -11,6 +11,14 @@
       <label>Prix</label>
       <Input type="number" @value={{@model.price}} placeholder="Prix du produit" required/>
     </div>
+    <div class="field">
+      <label>Section</label>
+      <select name="sections">
+        {{#each @model as |prod|}}
+          <option>{{ prod.section.name }}</option> <!-- pas de possibilité de recuperer les sections -->
+        {{/each}}
+      </select>
+    </div>
     <button {{ action 'addProduct' @model }} type="submit" class="ui button">Ajouter le produit</button>
     <LinkTo @route="sections" class="ui button">
       Annuler

@@ -44,7 +44,9 @@
         <button class="ui black button">Editer</button>
       </td>
       <td>
-        <button class="ui red button"><div class='glyphicon glyphicon-remove'></div></button>
+        <LinkTo @route="sections.delete" @model={{product.id}} class="ui red button">
+          <div class='glyphicon glyphicon-remove'></div>
+        </LinkTo>
       </td>
     </tr>
   {{/each}}

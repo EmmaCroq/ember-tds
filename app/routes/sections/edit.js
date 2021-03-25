@@ -7,7 +7,10 @@ export default class SectionsEditRoute extends Route {
   }
 
   @action editSection(section) {
-    //TO DO
     section.save().then(() => this.transitionTo('sections'));
+  }
+
+  renderTemplate() {
+    this.render({ outlet: 'newprod' });
   }
 }
