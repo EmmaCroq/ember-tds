@@ -22,4 +22,10 @@ Router.map(function () {
   this.route('order', { path: 'order/:order_id' });
   this.route('abstractroute');
   this.route('products');
+  this.route('myOrders', function () {
+    this.route('prepare', { path: 'prepare/:order_id' }, function () {
+      this.route('cancel');
+      this.route('prepared');
+    });
+  });
 });

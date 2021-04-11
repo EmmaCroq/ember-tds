@@ -9,7 +9,7 @@
     Gérer le Store
   </LinkTo>
 </div>
-<h2>Orders</h2>
+<h2>Commandes</h2>
 <ul>
   {{#each @model.orders as |order|}}
     <li>
@@ -19,6 +19,11 @@
     </li>
   {{/each}}
 </ul>
-
+<h2>Mes commandes</h2>
+<LinkTo @route="myOrders" @model={{@model.orders.id}} class="ui blue button">
+  <!-- pourquoi j'ai l'impression que le soucis de redirection vient du router.js et du fait qu'il ne veuille pas de
+  majuscule (bizarrement les trois redirections qui marchent pas c'est là où j'ai les trois erreurs), tant pis je sais plus quoi faire -->
+  Consulter mes commandes
+</LinkTo>
 
 {{outlet}}
