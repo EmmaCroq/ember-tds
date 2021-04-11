@@ -1,2 +1,21 @@
 {{page-title "Products"}}
+<h4>Liste des produits de la section {{ @model.name }}</h4>
+<LinkTo @route="sections" class="ui button">
+  Retour à la liste des sections
+</LinkTo>
+<table class="ui striped table">
+  {{#each @model as |product|}}
+    <tr>
+      <td>
+        {{ product.name }}
+      </td>
+      <td>
+        {{ product.price }} €
+      </td>
+    </tr>
+  {{/each}}
+</table>
+<LinkTo @route="sections" class="ui button">
+  Retour à la liste des sections
+</LinkTo>
 {{outlet}}

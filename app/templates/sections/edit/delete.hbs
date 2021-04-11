@@ -1,0 +1,12 @@
+{{page-title "Delete"}}
+
+<div class="ui segment">
+  <form class="ui form">
+    <h4 class="ui dividing header">Supprimer {{@model.name}}</h4>
+      <button {{ action 'deleteProduct' @model }} type="submit" class="ui red button">Confirmer</button>
+      <LinkTo @route="sections" class="ui button">
+        Annuler
+      </LinkTo>
+  </form>
+</div>
+{{outlet}}

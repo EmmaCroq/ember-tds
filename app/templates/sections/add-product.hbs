@@ -4,18 +4,22 @@
   <form class="ui form">
     <h4 class="ui dividing header">Ajouter un produit</h4>
     <div class="field">
-      <label>Nom</label>
+      <label>Nom *</label>
       <Input type="text" @value={{@model.name}} placeholder="Nom du produit" required/>
     </div>
     <div class="field">
-      <label>Prix</label>
-      <Input type="number" @value={{@model.price}} placeholder="Prix du produit" required/>
+      <label>Prix *</label>
+      <Input type="number" @value={{@model.price}} value="0.00" placeholder="Prix du produit" required/>
     </div>
     <div class="field">
-      <label>Section</label>
+      <label>Description</label>
+      <Input type="text" @value={{@model.description}} placeholder="Description du produit"/>
+    </div>
+    <div class="field">
+      <label>Section *</label>
       <select name="sections">
-        {{#each @model as |prod|}}
-          <option>{{ prod.section.name }}</option> <!-- pas de possibilité de recuperer les sections -->
+        {{#each @model.sections as |sect|}}
+          <option>{{ sect.name }}</option>
         {{/each}}
       </select>
     </div>

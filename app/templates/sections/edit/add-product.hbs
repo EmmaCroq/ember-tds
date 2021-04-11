@@ -1,0 +1,23 @@
+{{page-title "AddProduct"}}
+
+<div class="ui segment">
+  <form class="ui form">
+    <h4 class="ui dividing header">Ajouter un produit</h4>
+      <Input type="hidden" @value={{@model.idSection}} value="{{@model.section.id}}" placeholder="Nom du produit" required/>
+      <div class="field">
+        <label>Nom *</label>
+        <Input type="text" @value={{@model.name}} placeholder="Nom du produit" required/>
+      </div>
+      <div class="field">
+        <label>Prix *</label>
+        <Input type="number" @value={{@model.price}} value="0.00" placeholder="Prix du produit" required/>
+      </div>
+      <div class="field">
+        <label>Description<i>(optionnel)</i></label>
+        <Input type="text" @value={{@model.comments}} placeholder="Description du produit" required/>
+      </div>
+      <button {{ action 'addProduct' @model }} type="submit" class="ui button">Confirmer</button>
+      <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
+  </form>
+</div>
+{{outlet}}

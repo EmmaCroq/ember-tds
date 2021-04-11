@@ -5,34 +5,33 @@
     <h4 class="ui dividing header">Modifier une section</h4>
     <div class="field">
       <label>Nom</label>
-      <Input type="text" @value={{@model.name}} placeholder="Nom de la section" required/>
+      <Input type="text" @value={{@model.section.name}} placeholder="Nom de la section" required/>
     </div>
     <div class="field">
       <label>Description</label>
-      <Input type="text" @value={{@model.description}} placeholder="Description de la section" required/>
+      <Input type="text" @value={{@model.section.description}} placeholder="Description de la section" required/>
     </div>
-    <button {{ action 'editSection' @model }} type="submit" class="ui button">Modifier la section</button>
+    <button {{ action 'editSection' @model.section }} type="submit" class="ui button">Modifier la section</button>
     <LinkTo @route="sections" class="ui button">
       Annuler
     </LinkTo>
   </form>
   <hr>
-  <LinkTo @route="sections.addProduct" class="ui blue button">
-    Nouveau produit
-  </LinkTo>
-
-  {{outlet}}
 
   <div class="ui segment">
-    <h4>{{ @model.name }} ({{ @model.products.length }})</h4>
+    <h4>{{ @model.section.name }} ({{ @model.section.products.length }})</h4>
     <div class="ui form">
       <input type="search" class="ui input" placeholder="Filter selection">
     </div>
   </div>
 
-  <h4>Liste des produits de la section {{ @model.name }}</h4>
+  <h4>Liste des produits de la section {{ @model.section.name }}</h4>
+  <LinkTo @route="sections.edit.addProduct" class="ui blue button">
+    Nouveau produit
+  </LinkTo>
+  {{outlet "product"}}
   <table class="ui striped table">
-  {{#each @model.products as |product|}}
+  {{#each @model.section.products as |product|}}
     <tr>
       <td>
         {{ product.name }}
@@ -41,12 +40,10 @@
         {{ product.price }} €
       </td>
       <td>
-        <button class="ui black button">Editer</button>
+        <LinkTo {{action "editProduct" product.id}} @route="sections.edit.edit" @models={{array @model.section.id product.id}} class="ui black button">Editer</LinkTo>
       </td>
       <td>
-        <LinkTo @route="sections.delete" @model={{product.id}} class="ui red button">
-          <div class='glyphicon glyphicon-remove'></div>
-        </LinkTo>
+        <LinkTo {{action "deleteProduct" product.id}} @route="sections.edit.delete" @models={{array @model.section.id product.id}} class="ui red button"><div class='glyphicon glyphicon-remove'></div></LinkTo>
       </td>
     </tr>
   {{/each}}

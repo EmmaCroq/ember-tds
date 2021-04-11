@@ -18,7 +18,7 @@
     Nouveau produit
   </LinkTo>
 
-  {{ outlet "newsect" }}<hr>
+  {{ outlet "newsomething" }}<hr>
 
   <div class="ui segment">
     <h4>Sections ({{ @model.length }})</h4>
@@ -48,7 +48,7 @@
         <td>
           <LinkTo {{ action 'delete' section}} @route="sections.delete" @model={{section.id}} class="ui red button">
             <div class='glyphicon glyphicon-remove'></div> <!-- je n'arrives pas à réaliser une action sur un linkto -->
-          </LinkTo> <!-- c'est pourtant le seul moyen pour une route dynamique ??? -->
+          </LinkTo> <!-- c'est pourtant le seul moyen pour une route dynamique ( et du coup faire des suppressions multiples )??? -->
         </td>
       </tr>
     {{/each}}
